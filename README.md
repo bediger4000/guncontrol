@@ -12,6 +12,8 @@ The two of them aim at that target and fire simultaneously.
 One bullet hits it.
 What’s the probability that it came from A?
 
+<!-- 90% of the time, why do you ask? -->
+
 ---
 
 I decided to solve this via a simulation.
@@ -26,4 +28,26 @@ If that random number evalutes to less than 25, Marksman b hit the target.
 A or B
 4. Repeat a few times, display percentages of who hit the target.
 
-[Code repo](https://github.com/bediger4000/guncontrol)
+## Build and run
+
+```
+$ cd $GOPATH/src
+$ git clone https://github.com/bediger4000/guncontrol.git
+$ cd guncontrol
+$ go build gc1.go
+$ ./gc1
+```
+
+## Usage
+
+```
+  -A int
+        Proability in percent that Marksman A hits the target (default 75)
+  -B int
+        Proability in percent that Marksman B hits the target (default 25)
+  -N int
+        Number of rounds of shooting to simulate (default 10000)
+```
+
+I put 10,000 iterations as a default, but 100,000 iterations works better,
+and is computationally quite quick.
